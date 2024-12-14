@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital San Andrés de Caracollo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     <link rel="stylesheet" href="estilos.css">
+     body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Estilos para el encabezado */
+    header {
+        position: relative;
+        height: 400px;
+        background-image: url('images/header-background.jpg'); /* Ruta de la imagen de fondo */
+        background-size: cover;
+        background-position: center;
+        color: rgb(11, 11, 11);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .intro {
+        background: rgba(199, 152, 188, 0.778); /* Fondo semitransparente para mejorar la legibilidad */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .intro h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .intro p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        background-color: #e6a8d0;
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .cta-button:hover {
+        background-color: #d898cc;
+    }
+
+    /* Barra de navegación */
+    nav {
+        background-color: #d386b7;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+
+    nav ul li a:hover {
+        color: #007bff;
+    }
+
+    /* Secciones */
+    .section {
+        display: none; /* Escondemos las secciones por defecto */
+        padding: 20px;
+    }
+
+    .section.active {
+        display: block; /* Mostramos la sección activa */
+    }
+
+    /* Botón de WhatsApp */
+    .whatsapp-button {
+        background-color: #25d366;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+        background-color: #128c7e;
+    }
+
+    .method-image, .product-image {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    
+    <!-- Encabezado de bienvenida -->
+    <header>
+        <div class="intro">
+            <h1>Bienvenidos al Hospital San Andrés de Caracollo</h1>
+            <p>Brindamos atención integral a la salud de adolescentes, con servicios médicos y educativos sobre salud sexual y reproductiva.</p>
+            <button onclick="scrollToSection('hospital-info')" class="cta-button">Más Información</button>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showContent('hospital-info')">Hospital San Andrés</a></li>
+            <li><a href="javascript:void(0);" onclick="showContent('metodos')">Métodos Anticonceptivos</a></li>
+            <li><a href="javascript:void(0);" onclick="showContent('farmacia')">Farmacia</a></li>
+            <li><a href="javascript:void(0);" onclick="showContent('embarazo')">Embarazo Adolescente</a></li>
+            <li><a href="javascript:void(0);" onclick="showContent('ets')">Infecciones de Transmisión Sexual</a></li>
+            <li><a href="javascript:void(0);" onclick="showContent('Citas')">Reserva tu cita</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección del Hospital San Andrés -->
+    <div id="hospital-info" class="section">
+        <h2>Hospital San Andrés de Caracollo</h2>
+        <p>El Hospital San Andrés ha sido un pilar de la salud en Caracollo desde su fundación en 1985. Ofrecemos una atención integral para adolescentes, con especial énfasis en salud sexual y reproductiva. Nuestro hospital está comprometido con el bienestar físico y emocional de nuestros pacientes.</p>
+        <img src="images/hospital_1.jpg" alt="Hospital San Andrés de Caracollo" class="section-image">
+        <img src="images/hospital_2.jpg" alt="Interior del hospital" class="section-image">
+        <p>Contamos con un equipo de médicos y personal altamente capacitado que brinda atención de calidad en un ambiente seguro y acogedor.</p>
+        
+        <h3>Servicios que ofrecemos:</h3>
+        <ul>
+            <li>Consulta médica general</li>
+            <li>Atención ginecológica especializada</li>
+            <li>Psicología para adolescentes</li>
+            <li>Salud reproductiva y planificación familiar</li>
+            <li>Vacunas y controles preventivos</li>
+            <li>Educación en salud sexual</li>
+            <li>Cirugia</li>
+            <li>Pediatría</li>
+            <li>Medicina Interna</li>
+        </ul>
+        <h3>Horarios de Atención:</h3>
+        <p>De lunes a viernes, 8:00 AM - 5:00 PM. Sábados de 9:00 AM - 1:00 PM.</p>
+        <h3>Ubicación:</h3>
+        <p>Caracollo, Calle Principal, Frente al Parque Central.</p>
+        <a href="https://wa.me/+59171841090" class="whatsapp-button" target="_blank">Contactar por WhatsApp</a>
+    </div>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reserva de Citas Médicas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #004d99;
+                color: white;
+                padding: 10px 0;
+                text-align: center;
+            }
+            .container {
+                width: 80%;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            .form-group label {
+                font-weight: bold;
+            }
+            select, input[type="date"], input[type="time"], button {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            button {
+                background-color: #891256;
+                color: white;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #eb7bd3;
+            }
+            .specialty-options {
+                display: flex;
+                justify-content: space-between;
+            }
+            .specialty-options div {
+                width: 48%;
+            }
+            #whatsappButton {
+                background-color: #25d366;
+                color: white;
+                display: inline-block;
+                padding: 15px;
+                text-align: center;
+                border-radius: 5px;
+                margin-top: 20px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            #whatsappButton:hover {
+                background-color: #128c7e;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Reserva de Citas Médicas</h1>
+        </header>
+        <div class="container">
+            <h2>Seleccione su especialidad y disponibilidad</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" required placeholder="Ingrese su nombre completo">
+                </div>
+    
+                <div class="form-group">
+                    <label for="specialty">Especialidad Médica</label>
+                    <select id="specialty" required>
+                        <option value="">Seleccione una especialidad</option>
+                        <option value="medicina_general">Medicina General</option>
+                        <option value="ginecologia">Ginecología</option>
+                        <option value="pediatria">Pediatría</option>
+                        <option value="aida">AIDA</option>
+                        <option value="metodos_anticonceptivos">Orientación sobre Métodos Anticonceptivos</option>
+                    </select>
+                </div>
+    
+                <div class="form-group specialty-options">
+                    <div>
+                        <label for="appointmentDate">Fecha</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div>
+                        <label for="appointmentTime">Hora</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                </div>
+    
+                <button type="submit">Reservar Cita</button>
+            </form>
+            
+            <div id="confirmationMessage" style="margin-top: 20px; display: none;">
+                <h3>Cita Reservada con Éxito</h3>
+                <p>Gracias, <span id="confirmName"></span>. Tu cita para <span id="confirmSpecialty"></span> ha sido reservada para el <span id="confirmDate"></span> a las <span id="confirmTime"></span>.</p>
+                <a href="#" id="whatsappButton" target="_blank" style="display: none;">Enviar detalles por WhatsApp</a>
+            </div>
+        </div>
+    
+        <script>
+            // Capturamos el formulario y el mensaje de confirmación
+            const form = document.getElementById('appointmentForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const whatsappButton = document.getElementById('whatsappButton');
+            const appointmentTimeInput = document.getElementById('appointmentTime');
+    
+            // Lista de horarios permitidos
+            const allowedTimes = [
+                "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", // Mañana
+                "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00" // Tarde
+            ];
+    
+            // Función para configurar el horario permitido
+            function setAllowedTimes() {
+                const timeInput = document.getElementById("appointmentTime");
+                const currentTime = new Date().toISOString().slice(0, 16); // Fecha y hora actuales en formato ISO
+                timeInput.min = currentTime; // Limitar a horas futuras
+                timeInput.setAttribute('list', 'available-times'); // Asignar los horarios disponibles
+    
+                const datalist = document.createElement('datalist');
+                datalist.id = "available-times";
+                allowedTimes.forEach(time => {
+                    const option = document.createElement('option');
+                    option.value = time;
+                    datalist.appendChild(option);
+                });
+                document.body.appendChild(datalist);
+            }
+    
+            // Ejecutar la función para configurar los horarios disponibles cuando la página cargue
+            window.onload = setAllowedTimes;
+    
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevenir el envío del formulario
+    
+                // Obtener los valores del formulario
+                const name = document.getElementById('name').value;
+                const specialty = document.getElementById('specialty').value;
+                const date = document.getElementById('appointmentDate').value;
+                const time = appointmentTimeInput.value;
+    
+                // Verificar si todos los campos están completos
+                if (name && specialty && date && time) {
+                    // Mostrar el mensaje de confirmación
+                    document.getElementById('confirmName').textContent = name;
+                    document.getElementById('confirmSpecialty').textContent = getSpecialtyName(specialty);
+                    document.getElementById('confirmDate').textContent = date;
+                    document.getElementById('confirmTime').textContent = time;
+    
+                    confirmationMessage.style.display = 'block';
+    
+                    // Crear enlace de WhatsApp
+                    const message = `Hola, mi nombre es ${name}. Quisiera confirmar mi cita para ${getSpecialtyName(specialty)} el ${date} a las ${time}.`;
+                    const whatsappLink = `https://wa.me/+59177150577?text=${encodeURIComponent(message)}`;
+                    whatsappButton.href = whatsappLink;
+                    whatsappButton.style.display = 'inline-block'; // Mostrar el botón
+                } else {
+                    alert("Por favor, complete todos los campos.");
+                }
+            });
+    
+            // Función para convertir la especialidad a un nombre más legible
+            function getSpecialtyName(specialtyCode) {
+                switch (specialtyCode) {
+                    case 'medicina_general': return 'Medicina General';
+                    case 'ginecologia': return 'Ginecología';
+                    case 'pediatria': return 'Pediatría';
+                    case 'aida': return 'AIDA';
+                    case 'metodos_anticonceptivos': return 'Orientación sobre Métodos Anticonceptivos';
+                    default: return 'Especialidad desconocida';
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
+    <!-- Sección de Métodos Anticonceptivos -->
+    <div id="metodos" class="section">
+        <h2>Métodos Anticonceptivos</h2>
+        <p>A continuación te presentamos algunos métodos anticonceptivos, su uso y ventajas. Si deseas más información, puedes contactar con nosotros a través de WhatsApp.</p>
+        
+        <div class="method">
+            <h3>Anticonceptivos Orales</h3>
+            <img src="images/pildora.jpg" alt="Anticonceptivos Orales" class="method-image">
+            <p>Las píldoras anticonceptivas son una de las opciones más comunes y efectivas para prevenir el embarazo. Se toman diariamente, preferentemente a la misma hora, para asegurar su efectividad.</p>
+            <h4>Modo de Uso:</h4>
+            <p>Tomar una píldora diaria durante 21 días, seguido de una pausa de 7 días.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Altamente efectivas si se toman correctamente.</li>
+                <li>Regulan el ciclo menstrual.</li>
+                <li>Pueden reducir el riesgo de ciertos cánceres, como el de ovario.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Debe tomarse todos los días.</li>
+                <li>Puede causar efectos secundarios como náuseas o dolor de cabeza.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Anticonceptivos Orales')">Más Información por WhatsApp</button>
+        </div>
+
+        <div class="method">
+            <h3>Preservativos</h3>
+            <img src="images/preservativo_2.jpg" alt="Preservativos" class="method-image">
+            <p>El preservativo es un método de barrera que no solo previene embarazos, sino que también protege contra las enfermedades de transmisión sexual (ETS).</p>
+            <h4>Modo de Uso:</h4>
+            <p>Colócalo antes de la penetración y asegúrate de que se ajuste bien.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Protege contra las ETS.</li>
+                <li>No requiere receta médica.</li>
+                <li>Fácil de conseguir y usar.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Puede romperse si no se usa correctamente.</li>
+                <li>Algunas personas pueden ser alérgicas al látex.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Preservativos')">Más Información por WhatsApp</button>
+        </div>
+
+        <div class="method">
+            <h3>DIU (Dispositivo Intrauterino)</h3>
+            <img src="images/diu_2.jpg" alt="DIU" class="method-image">
+            <p>El DIU es un pequeño dispositivo colocado en el útero que previene el embarazo. Existen dos tipos: hormonal y de cobre.</p>
+            <h4>Modo de Uso:</h4>
+            <p>El DIU es colocado por un profesional de la salud en el útero.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Proporciona protección a largo plazo (hasta 10 años).</li>
+                <li>Altamente efectivo.</li>
+                <li>No requiere mantenimiento diario.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Puede causar dolor o sangrado irregular al principio.</li>
+                <li>No protege contra ETS.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('DIU')">Más Información por WhatsApp</button>
+        </div>
+
+        <div class="method">
+            <h3>Implante Subdérmico</h3>
+            <img src="images/implante.jpg" alt="Implante Subdérmico" class="method-image">
+            <p>Un implante subdérmico es una pequeña varilla colocada bajo la piel del brazo, que libera hormonas para prevenir el embarazo.</p>
+            <h4>Modo de Uso:</h4>
+            <p>El implante se coloca en el brazo por un médico y se debe reemplazar cada 3 años.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Protección de largo plazo.</li>
+                <li>No requiere recordatorio diario.</li>
+                <li>Reversible: puedes quedar embarazada tan pronto como lo retires.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Puede causar irregularidades menstruales.</li>
+                <li>Puede requerir una pequeña cirugía para su colocación.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Implante Subdérmico')">Más Información por WhatsApp</button>
+        </div>
+
+        <div class="method">
+            <h3>Inyecciones Anticonceptivas</h3>
+            <img src="images/inyeccion.jpg" alt="Inyecciones Anticonceptivas" class="method-image">
+            <p>Las inyecciones anticonceptivas son aplicadas cada tres meses y contienen hormonas que previenen el embarazo.</p>
+            <h4>Modo de Uso:</h4>
+            <p>Se aplica una inyección cada 12 semanas.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Protección a largo plazo.</li>
+                <li>No interfiere con las relaciones sexuales.</li>
+                <li>Puede reducir los dolores menstruales.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Puede causar efectos secundarios como aumento de peso o cambios en el ciclo menstrual.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Inyecciones Anticonceptivas')">Más Información por WhatsApp</button>
+        </div>
+
+        <div class="method">
+            <h3>Parche Anticonceptivo</h3>
+            <img src="images/parche.jpg" alt="Parche Anticonceptivo" class="method-image">
+            <p>El parche anticonceptivo se aplica sobre la piel y libera hormonas que previenen el embarazo.</p>
+            <h4>Modo de Uso:</h4>
+            <p>El parche se debe cambiar semanalmente, durante 3 semanas, y se deja una semana sin parche.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Fácil de usar.</li>
+                <li>Requiere poca atención después de su colocación.</li>
+                <li>Puede ser discreto y fácil de ocultar.</li>
+            </ul>
+            <h4>Desventajas:</h4>
+            <ul>
+                <li>Puede causar irritación en la piel.</li>
+                <li>No protege contra ETS.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Parche Anticonceptivo')">Más Información por WhatsApp</button>
+        </div>
+        
+        <div class="method">
+            <h3>Diafragma</h3>
+            <img src="images/diafragma.jpg" alt="Diafragma" class="method-image">
+            <p>El diafragma es un método anticonceptivo de barrera que se coloca en la vagina para evitar que los espermatozoides lleguen al útero.</p>
+            <h4>Modo de Uso:</h4>
+            <p>Se coloca en la vagina antes de la relación sexual, junto con un espermicida.</p>
+            <h4>Ventajas:</h4>
+            <ul>
+                <li>Reversible y no hormonal.</li>
+                <li>Puede usarse solo o con otros métodos anticonceptivos.</li>
+            </ul>
+            <button onclick="handleWhatsappContact('Diafragma')">Más Información por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Sección de Farmacia -->
+    <div id="farmacia" class="section">
+        <h2>Farmacia</h2>
+        <p>En nuestra farmacia ofrecemos una amplia variedad de medicamentos para cuidar tu salud. Puedes solicitar asesoría personalizada para elegir el producto que mejor se ajuste a tus necesidades.</p>
+        <img src="images/farmacia.jpg" alt="Farmacia del Hospital" class="product-image">
+        <p>Contamos con productos relacionados a anticonceptivos, medicamentos para el tratamiento de enfermedades comunes, y productos de salud preventiva.</p>
+        <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">Consultar con un Farmacéutico</a>
+        <div class="product">
+            <h3>Anticonceptivos Orales</h3>
+            <img src="images/pildora.jpg" alt="Anticonceptivos Orales" class="product-image">
+            <p>Precio: de 30bs a 50bs por caja (21a 28 píldoras). Modo de uso: Tomar una píldora diaria.</p>
+            <button onclick="handleWhatsappContact('Anticonceptivos Orales')">Deseo mas informacion</button>
+        </div>
+
+        <div class="product">
+            <h3>Preservativos</h3>
+            <img src="images/preservativo_2.jpg" alt="Preservativos" class="product-image">
+            <p>Precio: 10bs por paquete de 5. Modo de uso: Colócalo antes de la penetración.</p>
+            <button onclick="handleWhatsappContact('Preservativos')">Deseo mas informacion</button>
+        </div>
+
+        <div class="product">
+            <h3>DIU</h3>
+            <img src="images/diu_2.jpg" alt="DIU" class="product-image">
+            <p>Precio: 140bs (colocación incluida). Modo de uso: Colocado por un ginecólogo.</p>
+            <button onclick="handleWhatsappContact('DIU')">Deseo mas informacion</button>
+        </div>
+        <div class="product">
+            <h3>Implante Subdérmico</h3>
+            <img src="images/implante.jpg" alt="Implante Subdérmico">
+            <p>Precio: 500bs (colocación incluida).</p>
+            <button onclick="handleWhatsappContact('Implante Subdérmico')">Deseo mas informacion</button>
+        </div>
+    </div>
+
+    <!-- Sección de Embarazo Adolescente -->
+    <div id="embarazo" class="section">
+        <h2>Embarazo Adolescente</h2>
+        <p>El embarazo en la adolescencia es un desafío tanto para la joven como para su entorno. En el Hospital San Andrés ofrecemos acompañamiento psicológico, ginecológico y obstétrico para garantizar el bienestar de las adolescentes embarazadas.</p>
+        <img src="images/embarazo.jpg" alt="Embarazo Adolescente" class="product-image">
+        <p>Ofrecemos orientación en salud reproductiva y planificación familiar para prevenir embarazos no deseados.</p>
+        <a href="https://wa.me/+59171841090" class="whatsapp-button" target="_blank">Asesoría sobre Embarazo Adolescente</a>
+        <h3>Cómo Prevenir el Embarazo Adolescente:</h3>
+        <ul>
+            <li>Uso de métodos anticonceptivos adecuados.</li>
+            <li>Acceso a educación sexual integral.</li>
+            <li>Comunicación abierta con padres y profesionales de la salud.</li>
+        </ul>
+
+        <h3>¿Cómo Realizarse una Prueba de Embarazo?</h3>
+        <p>Las pruebas de embarazo se pueden realizar en casa o en un centro de salud. Si tienes sospechas, consulta a un ginecólogo o realiza una prueba de embarazo en la farmacia o el hospital.</p>
+        <img src="images/prueba_embarazo.jpg" alt="Prueba de embarazo" class="section-image">
+        
+        <h3>Acudir al Centro de Salud:</h3>
+        <p>Es importante acudir al hospital para realizar un seguimiento adecuado durante el embarazo. Podemos ayudarte a obtener tu carnet de control prenatal.</p>
+        <a href="https://wa.me/+59171841090" class="whatsapp-button">Habla con la Psicóloga</a>
+        <a href="https://wa.me/+59171841090" class="whatsapp-button">Habla con la Ginecóloga</a>
+    </div>
+
+    <!-- Sección de Infecciones de Transmisión Sexual (ITS) -->
+    <div id="ets" class="section">
+        <h2>Infecciones de Transmisión Sexual</h2>
+        <p>Las ITS son un riesgo importante para la salud, especialmente en adolescentes. En nuestro hospital ofrecemos pruebas, tratamientos y educación en prevención.</p>
+        <img src="images/ets.jpg" alt="Infecciones de Transmisión Sexual" class="product-image">
+        <p>Realizamos pruebas rápidas para detectar ITS y brindamos orientación para mantener relaciones sexuales seguras.</p>
+        <a href="https://wa.me/+591718411090" class="whatsapp-button" target="_blank">Consultar sobre ETS</a>
+       <!-- Información sobre algunas ITS comunes -->
+       <div class="ets-section">
+        <h3>Clamidia</h3>
+        <img src="images/clamidia.jpg" alt="Clamidia">
+        <p>La clamidia es una infección bacteriana que afecta tanto a hombres como a mujeres. Es importante diagnosticarla a tiempo para evitar complicaciones graves.</p>
+        <h4>Síntomas Comunes:</h4>
+        <ul>
+            <li>Dolor al orinar.</li>
+            <li>Secreción anormal.</li>
+            <li>Dolor abdominal.</li>
+        </ul>
+        <h4>Prevención:</h4>
+        <ul>
+            <li>Uso de preservativos durante las relaciones sexuales.</li>
+            <li>Pruebas regulares de ETS.</li>
+        </ul>
+    </div>
+
+    <div class="ets-section">
+        <h3>Gonorrea</h3>
+        <img src="images/gonorrea.jpg" alt="Gonorrea">
+        <p>La gonorrea es una infección bacteriana común. Puede ser asintomática, pero si no se trata puede provocar infertilidad.</p>
+        <h4>Síntomas Comunes:</h4>
+        <ul>
+            <li>Dolor al orinar.</li>
+            <li>Secreción genital.</li>
+            <li>Dolores articulares.</li>
+        </ul>
+        <h4>Prevención:</h4>
+        <ul>
+            <li>Uso de preservativos.</li>
+            <li>Exámenes periódicos.</li>
+        </ul>
+    </div>
+
+    <div class="ets-section">
+        <h3>VPH</h3>
+        <img src="images/vph.jpg" alt="VPH">
+        <p>El VPH es uno de los virus más comunes. Puede causar verrugas genitales y, en algunos casos, cáncer cervical.</p>
+        <h4>Síntomas Comunes:</h4>
+        <ul>
+            <li>Verrugas genitales.</li>
+            <li>Cambios en el cuello uterino.</li>
+        </ul>
+        <h4>Prevención:</h4>
+        <ul>
+            <li>Vacunación contra el VPH.</li>
+            <li>Uso de preservativos.</li>
+        </ul>
+    </div>
+
+    <h3>Prevención General de las ETS</h3>
+    <ul>
+        <li>Uso de preservativos.</li>
+        <li>Exámenes regulares de ETS.</li>
+        <li>Vacunación contra el VPH y la hepatitis B.</li>
+    </ul>
+</div>
+
+<a href="https://wa.me/+59171841090" class="whatsapp-button" target="_blank">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+</a>
+<!-- Sección de Preguntas y Respuestas -->
+<div class="container">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+
+    <div class="faq">
+        <h3>¿Cómo puedo reservar una cita médica?</h3>
+        <p>Para reservar una cita médica, solo debes completar el formulario en nuestra página y elegir la especialidad, fecha y hora que prefieras.</p>
+    </div>
+    <div class="faq">
+        <h3>¿Cuál es el horario de atención?</h3>
+        <p>Nuestro horario de atención es de lunes a viernes, de 9:00 a 12:00 y de 14:00 a 17:00.</p>
+    </div>
+    <div class="faq">
+        <h3>¿Se pueden hacer consultas online?</h3>
+        <p>Actualmente, las consultas son presenciales, pero estamos trabajando para ofrecer atención en línea en el futuro.</p>
+    </div>
+
+    <h2 class="section-title">Enviar una Pregunta</h2>
+    <form id="questionForm">
+        <div class="form-group">
+            <label for="question">Escribe tu pregunta:</label>
+            <input type="text" id="question" placeholder="Escribe tu pregunta aquí..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="questionType">Tipo de pregunta:</label>
+            <select id="questionType" required>
+                <option value="">Seleccione una opción</option>
+                <option value="anonima">Pregunta Anónima</option>
+                <option value="publica">Pregunta Pública</option>
+            </select>
+        </div>
+
+        <button type="submit">Enviar Pregunta</button>
+    </form>
+
+    <div id="confirmationMessageQuestion" style="margin-top: 20px; display: none;">
+        <h3>Gracias por tu pregunta</h3>
+        <p id="confirmText"></p>
+    </div>
+
+    <div id="publicQuestions" style="margin-top: 20px;">
+        <h3>Preguntas Públicas</h3>
+        <ul id="questionsList"></ul>
+    </div>
+
+    <a href="#" id="whatsappButtonQuestion" target="_blank" style="display: none;">Enviar pregunta por WhatsApp</a>
+</div>
+
+<!-- Aquí va el código JavaScript -->
+<script>
+    const questionForm = document.getElementById('questionForm');
+    const questionTypeInput = document.getElementById('questionType');
+    const questionInput = document.getElementById('question');
+    const publicQuestionsList = document.getElementById('questionsList');
+    const confirmationMessageQuestion = document.getElementById('confirmationMessageQuestion');
+    const whatsappButtonQuestion = document.getElementById('whatsappButtonQuestion');
+
+    let publicQuestions = [];
+
+    questionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const questionText = questionInput.value;
+        const questionType = questionTypeInput.value;
+
+        if (questionText && questionType) {
+            if (questionType === 'publica') {
+                const questionItem = {
+                    text: questionText,
+                    response: ''
+                };
+                publicQuestions.push(questionItem);
+                updatePublicQuestions();
+                confirmationMessageQuestion.style.display = 'block';
+                document.getElementById('confirmText').textContent = `Tu pregunta: "${questionText}" ha sido publicada.`;
+            } else if (questionType === 'anonima') {
+                const message = `Tengo una pregunta anónima: ${questionText}`;
+                const whatsappLink = `https://wa.me/+59171841090?text=${encodeURIComponent(message)}`;
+                whatsappButtonQuestion.href = whatsappLink;
+                whatsappButtonQuestion.style.display = 'inline-block';
+                confirmationMessageQuestion.style.display = 'block';
+                document.getElementById('confirmText').textContent = 'Tu pregunta ha sido enviada de forma anónima por WhatsApp.';
+            }
+
+            questionInput.value = '';
+            questionTypeInput.value = '';
+        }
+    });
+
+    // Función para actualizar la lista de preguntas públicas
+    function updatePublicQuestions() {
+        publicQuestionsList.innerHTML = '';
+        publicQuestions.forEach(function(question, index) {
+            const li = document.createElement('li');
+            li.classList.add('question-item');
+
+            const questionText = document.createElement('div');
+            questionText.classList.add('question-text');
+            questionText.textContent = question.text;
+            li.appendChild(questionText);
+
+            const responseButton = document.createElement('button');
+            responseButton.classList.add('response-button');
+            responseButton.textContent = 'Responder';
+            responseButton.onclick = function() {
+                const responseArea = document.createElement('div');
+                responseArea.classList.add('response-area');
+                const responseInput = document.createElement('input');
+                responseInput.type = 'text';
+                responseInput.placeholder = 'Escribe tu respuesta aquí...';
+                const submitResponseButton = document.createElement('button');
+                submitResponseButton.textContent = 'Enviar Respuesta';
+                submitResponseButton.onclick = function() {
+                    question.response = responseInput.value;
+                    updatePublicQuestions();  // Re-renderizar las preguntas y respuestas
+                };
+
+                responseArea.appendChild(responseInput);
+                responseArea.appendChild(submitResponseButton);
+                li.appendChild(responseArea);
+            };
+            li.appendChild(responseButton);
+
+            // Mostrar la respuesta si existe
+            if (question.response) {
+                const responseText = document.createElement('div');
+                responseText.textContent = `Respuesta: ${question.response}`;
+                li.appendChild(responseText);
+            }
+
+            publicQuestionsList.appendChild(li);
+        });
+    }
+</script>
+</body>
+</html>
+
+    <!-- JavaScript para manejar las secciones activas y WhatsApp -->
+    <script>
+        function showContent(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            const activeSection = document.getElementById(id);
+            activeSection.classList.add('active');
+        }
+
+        function handleWhatsappContact(topic) {
+            const phoneNumber = '+59171841090'; // Número de teléfono de WhatsApp
+            const message = `¡Hola! Quiero más información sobre ${topic}.`;
+            const url = `https://wa.me/${+59171841090}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Mostrar la primera sección por defecto
+        document.addEventListener('DOMContentLoaded', () => showContent('hospital-info'));
+
+    </script>
+</body>
+</html>
